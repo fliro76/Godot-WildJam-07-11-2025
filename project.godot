@@ -11,4 +11,5 @@ config_version=5
 [application]
 
 config/name="Godot Wildjam 07-11-2025"
+run/main_scene="uid://p151r725gvhn"
 config/features=PackedStringArray("4.4", "Forward Plus")
