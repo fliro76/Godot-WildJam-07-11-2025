@@ -16,7 +16,7 @@ size = Vector2(0.81195, 57.5558)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfk5q"]
 size = Vector2(54.8221, 20)
 
-[node name="Level1" type="Node2D"]
+[node name="Test_Env" type="Node2D"]
 
 [node name="CollisionBox" type="Node2D" parent="."]
 top_level = true

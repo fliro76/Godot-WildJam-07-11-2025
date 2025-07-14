@@ -45,7 +45,6 @@ size = Vector2(16, 16)
 [node name="Character_Side_Scroll" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-motion_mode = 1
 script = ExtResource("1_u0p8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
