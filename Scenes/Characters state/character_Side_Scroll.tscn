@@ -1,22 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjl7vmx40r3i8"]
+[gd_scene load_steps=9 format=3 uid="uid://dcc73fmliw256"]
 
-[ext_resource type="Script" uid="uid://biqd8jyw27m7d" path="res://Scripts/Character_Movement_Top_Down.gd" id="1_ushfy"]
-[ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_owm7s"]
+[ext_resource type="Script" uid="uid://dhse87r2o65f" path="res://Scripts/Character_Movement_Side_Scroll.gd" id="1_u0p8r"]
+[ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_hn3hs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
-atlas = ExtResource("2_owm7s")
+atlas = ExtResource("2_hn3hs")
 region = Rect2(0, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejsiy"]
-atlas = ExtResource("2_owm7s")
+atlas = ExtResource("2_hn3hs")
 region = Rect2(16, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mse5"]
-atlas = ExtResource("2_owm7s")
+atlas = ExtResource("2_hn3hs")
 region = Rect2(32, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reotu"]
-atlas = ExtResource("2_owm7s")
+atlas = ExtResource("2_hn3hs")
 region = Rect2(48, 96, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a5ess"]
@@ -42,10 +42,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbia7"]
 size = Vector2(16, 16)
 
-[node name="Character_Top_Down" type="Node2D"]
+[node name="Character_Side_Scroll" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_ushfy")
+motion_mode = 1
+script = ExtResource("1_u0p8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(-1, -2)
