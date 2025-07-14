@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjro7lbdw1qk"]
+
+[ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="2_xfk5q"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t2wyo"]
+distance = 1.0
+
+[node name="Level1" type="Node2D"]
+
+[node name="Characters" type="Node2D" parent="."]
+position = Vector2(4, -4)
+
+[node name="Character_Top_Down" parent="Characters" instance=ExtResource("2_xfk5q")]
+position = Vector2(450, 193)
+scale = Vector2(11.8, 11.8)
+
+[node name="Camera" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+position = Vector2(-4, 3)
+scale = Vector2(582.944, -6647.96)
+anchor_mode = 0
+
+[node name="Walls Collision" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Walls Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Top"]
+position = Vector2(39, 3)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_t2wyo")
+
+[node name="Left" type="StaticBody2D" parent="Walls Collision"]
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Left"]
+position = Vector2(-46, -4)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_t2wyo")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls Collision"]
+position = Vector2(-34, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Bottom"]
+position = Vector2(1907, 1082)
+shape = SubResource("WorldBoundaryShape2D_t2wyo")
+
+[node name="Right" type="StaticBody2D" parent="Walls Collision"]
+position = Vector2(91, -40)
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Right"]
+position = Vector2(-1080, 1825)
+shape = SubResource("WorldBoundaryShape2D_t2wyo")
