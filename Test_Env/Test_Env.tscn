@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://buijd2lnephv0"]
+
+[ext_resource type="Texture2D" uid="uid://dtfo6iaceodul" path="res://Assets/City Tile Set/PNG/City1/Bright/wheels&hydrant.png" id="1_hywm6"]
+[ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/character_Top_Down.tscn" id="2_6hlny"]
+[ext_resource type="Texture2D" uid="uid://bxm8m20scak3b" path="res://Assets/City Tile Set/PNG/City1/Bright/road&border.png" id="2_ldduo"]
+[ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/character_Side_Scroll.tscn" id="3_ofnu1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqy1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk57k"]
+size = Vector2(0.293855, 727.973)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0hev"]
+size = Vector2(0.81195, 57.5558)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfk5q"]
+size = Vector2(54.8221, 20)
+
+[node name="Level1" type="Node2D"]
+
+[node name="CollisionBox" type="Node2D" parent="."]
+top_level = true
+
+[node name="Collision" type="StaticBody2D" parent="CollisionBox"]
+physics_material_override = SubResource("PhysicsMaterial_qqy1o")
+
+[node name="CollisionShape2D_FH" type="CollisionShape2D" parent="CollisionBox/Collision"]
+position = Vector2(-135, 19)
+scale = Vector2(579.367, 0.325047)
+shape = SubResource("RectangleShape2D_vk57k")
+debug_color = Color(0, 0.640127, 0.354578, 0.42)
+
+[node name="CollisionShape2D_FH2" type="CollisionShape2D" parent="CollisionBox/Collision"]
+position = Vector2(619, -51.0138)
+scale = Vector2(573.927, 6.60277)
+shape = SubResource("RectangleShape2D_r0hev")
+debug_color = Color(0, 0.640127, 0.354578, 0.42)
+
+[node name="Wheels&hydrant" type="Sprite2D" parent="CollisionBox/Collision"]
+position = Vector2(31, -167)
+texture = ExtResource("1_hywm6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CollisionBox"]
+disable_mode = 2
+
+[node name="Floor" type="CollisionShape2D" parent="CollisionBox/StaticBody2D"]
+modulate = Color(0.492809, 1, 0.845551, 1)
+self_modulate = Color(0.489902, 1, 0.905058, 1)
+top_level = true
+position = Vector2(-6, 258)
+scale = Vector2(34.84, 11.8)
+shape = SubResource("RectangleShape2D_xfk5q")
+
+[node name="Road&border" type="Sprite2D" parent="CollisionBox/StaticBody2D"]
+position = Vector2(-17, -165)
+texture = ExtResource("2_ldduo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CollisionBox/StaticBody2D"]
+offset_left = -958.0
+offset_top = 131.0
+offset_right = -848.0
+offset_bottom = 171.0
+scale = Vector2(17.24, 8.12)
+text = "Floor Collision"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-976, -896)
+scale = Vector2(-45.841, -445.852)
+anchor_mode = 0
+zoom = Vector2(0.6, 0.605)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Character_Top_Down" parent="Characters" instance=ExtResource("2_6hlny")]
+position = Vector2(169, 66)
+scale = Vector2(11.8, 11.8)
+
+[node name="Character_Side_Scroll" parent="Characters" instance=ExtResource("3_ofnu1")]
+position = Vector2(-589, 39.9999)
+scale = Vector2(13.28, 13.28)
