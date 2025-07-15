@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://buijd2lnephv0"]
+[gd_scene load_steps=18 format=3 uid="uid://buijd2lnephv0"]
 
+[ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="1_hn2v1"]
 [ext_resource type="Texture2D" uid="uid://dtfo6iaceodul" path="res://Assets/Template Assets/City Tile Set/PNG/City1/Bright/wheels&hydrant.png" id="1_hywm6"]
 [ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="2_6hlny"]
 [ext_resource type="Texture2D" uid="uid://bxm8m20scak3b" path="res://Assets/Template Assets/City Tile Set/PNG/City1/Bright/road&border.png" id="2_ldduo"]
 [ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="3_ofnu1"]
 [ext_resource type="PackedScene" uid="uid://duifersubfxhf" path="res://Scenes/Miscelanious/Interact Area/interact_area.tscn" id="4_ldduo"]
+[ext_resource type="Texture2D" uid="uid://cybyba15amqkn" path="res://Assets/Player_Character/Idle.png" id="7_hn2v1"]
+
+[sub_resource type="GDScript" id="GDScript_r0hev"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqy1o"]
 
@@ -17,34 +21,76 @@ size = Vector2(0.81195, 57.5558)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfk5q"]
 size = Vector2(54.8221, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc4uv"]
+atlas = ExtResource("7_hn2v1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn0eq"]
+atlas = ExtResource("7_hn2v1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twey1"]
+atlas = ExtResource("7_hn2v1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ha3"]
+atlas = ExtResource("7_hn2v1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfrs8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc4uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn0eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twey1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3ha3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Test_Env" type="Node2D"]
 
-[node name="CollisionBox" type="Node2D" parent="."]
+[node name="PauseMenu" parent="." instance=ExtResource("1_hn2v1")]
+process_mode = 3
+
+[node name="Pause" type="Node" parent="."]
+script = SubResource("GDScript_r0hev")
+
+[node name="CollisionBox" type="Node2D" parent="Pause"]
 top_level = true
 
-[node name="Collision" type="StaticBody2D" parent="CollisionBox"]
+[node name="Collision" type="StaticBody2D" parent="Pause/CollisionBox"]
 physics_material_override = SubResource("PhysicsMaterial_qqy1o")
 
-[node name="CollisionShape2D_FH" type="CollisionShape2D" parent="CollisionBox/Collision"]
+[node name="CollisionShape2D_FH" type="CollisionShape2D" parent="Pause/CollisionBox/Collision"]
 position = Vector2(-135, 19)
 scale = Vector2(579.367, 0.325047)
 shape = SubResource("RectangleShape2D_vk57k")
 debug_color = Color(0, 0.640127, 0.354578, 0.42)
 
-[node name="CollisionShape2D_FH2" type="CollisionShape2D" parent="CollisionBox/Collision"]
+[node name="CollisionShape2D_FH2" type="CollisionShape2D" parent="Pause/CollisionBox/Collision"]
 position = Vector2(619, -51.0138)
 scale = Vector2(573.927, 6.60277)
 shape = SubResource("RectangleShape2D_r0hev")
 debug_color = Color(0, 0.640127, 0.354578, 0.42)
 
-[node name="Wheels&hydrant" type="Sprite2D" parent="CollisionBox/Collision"]
+[node name="Wheels&hydrant" type="Sprite2D" parent="Pause/CollisionBox/Collision"]
 position = Vector2(31, -167)
 texture = ExtResource("1_hywm6")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="CollisionBox"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Pause/CollisionBox"]
 disable_mode = 2
 
-[node name="Floor" type="CollisionShape2D" parent="CollisionBox/StaticBody2D"]
+[node name="Floor" type="CollisionShape2D" parent="Pause/CollisionBox/StaticBody2D"]
 modulate = Color(0.492809, 1, 0.845551, 1)
 self_modulate = Color(0.489902, 1, 0.905058, 1)
 top_level = true
@@ -52,11 +98,11 @@ position = Vector2(-6, 258)
 scale = Vector2(34.84, 11.8)
 shape = SubResource("RectangleShape2D_xfk5q")
 
-[node name="Road&border" type="Sprite2D" parent="CollisionBox/StaticBody2D"]
+[node name="Road&border" type="Sprite2D" parent="Pause/CollisionBox/StaticBody2D"]
 position = Vector2(-17, -165)
 texture = ExtResource("2_ldduo")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CollisionBox/StaticBody2D"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Pause/CollisionBox/StaticBody2D"]
 offset_left = -958.0
 offset_top = 131.0
 offset_right = -848.0
@@ -66,21 +112,29 @@ text = "Floor Collision"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Pause"]
 position = Vector2(-976, -896)
-scale = Vector2(-45.841, -445.852)
+rotation = -3.14159
+scale = Vector2(45.841, 445.852)
 anchor_mode = 0
 zoom = Vector2(0.6, 0.605)
 
-[node name="Characters" type="Node2D" parent="."]
+[node name="Characters" type="Node2D" parent="Pause"]
 
-[node name="Character_Side_Scroll" parent="Characters" instance=ExtResource("3_ofnu1")]
+[node name="Character_Side_Scroll" parent="Pause/Characters" instance=ExtResource("3_ofnu1")]
 position = Vector2(-589, 39.9999)
 scale = Vector2(13.28, 13.28)
 
-[node name="Character_Top_Down" parent="Characters" instance=ExtResource("2_6hlny")]
+[node name="Character_Top_Down" parent="Pause/Characters" instance=ExtResource("2_6hlny")]
 position = Vector2(192, -59)
 scale = Vector2(11.3184, 5.24)
 
-[node name="Door" parent="." instance=ExtResource("4_ldduo")]
+[node name="Door" parent="Pause" instance=ExtResource("4_ldduo")]
 position = Vector2(41, -41)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-193, -310)
+scale = Vector2(4.75401, 4.72)
+sprite_frames = SubResource("SpriteFrames_pfrs8")
+autoplay = "default"
+frame_progress = 0.539542

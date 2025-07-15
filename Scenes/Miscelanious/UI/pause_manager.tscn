@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0d5k3wgyeje5"]
+
+[ext_resource type="Script" uid="uid://cyenqv0i25iew" path="res://Scripts/pause_manager.gd" id="1_ds18y"]
+[ext_resource type="Script" uid="uid://bo7ixyjdr6h06" path="res://Scripts/leavegame.gd" id="2_y76x1"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_ds18y")
+
+[node name="pause" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 790.0
+offset_top = 275.0
+offset_right = -1060.0
+offset_bottom = -774.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.72, 6.72)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Resume"
+
+[node name="Leave" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 745.0
+offset_top = 654.0
+offset_right = -1033.0
+offset_bottom = -395.0
+scale = Vector2(3.95254, 3.95254)
+size_flags_horizontal = 4
+text = "Leave to Desktop"
+icon_alignment = 1
+script = ExtResource("2_y76x1")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Leave" to="Leave" method="_on_pressed"]
