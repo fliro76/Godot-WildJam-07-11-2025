@@ -13,6 +13,7 @@ config_version=5
 config/name="Godot Wildjam 07-11-2025"
 run/main_scene="uid://dreyi5v2n31ft"
 config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
 
 [display]
 
@@ -62,6 +63,7 @@ Pause={
 [layer_names]
 
 2d_physics/layer_3="Interactions"
+2d_physics/layer_10="Collectibles"
 
 [rendering]
 
