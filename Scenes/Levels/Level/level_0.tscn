@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccx4ti6fa5mvu"]
+[gd_scene load_steps=5 format=3 uid="uid://ccx4ti6fa5mvu"]
 
 [ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="1_6j21y"]
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_aro42"]
+[ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="3_c1mpu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g82nm"]
 distance = 1.0
 
 [node name="Level - Outside" type="Node2D"]
+process_mode = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+process_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_g82nm")
 
 [node name="Character_Side_Scroll" parent="." instance=ExtResource("1_6j21y")]
+process_mode = 1
 position = Vector2(-15, -9)
 
 [node name="Camera2D" type="Camera2D" parent="Character_Side_Scroll"]
@@ -24,3 +28,6 @@ zoom = Vector2(3, 3)
 position = Vector2(178, -26)
 scale = Vector2(0.5, 0.5)
 levelToTeleport = "Scenes/Levels/Level/level_1"
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_c1mpu")]
+process_mode = 3

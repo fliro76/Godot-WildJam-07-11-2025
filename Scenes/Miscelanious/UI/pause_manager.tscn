@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bo7ixyjdr6h06" path="res://Scripts/leavegame.gd" id="2_y76x1"]
 
 [node name="PauseMenu" type="CanvasLayer"]
-process_mode = 2
+process_mode = 3
 script = ExtResource("1_ds18y")
 
 [node name="pause" type="Button" parent="."]

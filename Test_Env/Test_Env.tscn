@@ -60,7 +60,6 @@ animations = [{
 [node name="Test_Env" type="Node2D"]
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_hn2v1")]
-process_mode = 3
 
 [node name="Pause" type="Node" parent="."]
 script = SubResource("GDScript_r0hev")
@@ -122,6 +121,7 @@ zoom = Vector2(0.6, 0.605)
 [node name="Characters" type="Node2D" parent="Pause"]
 
 [node name="Character_Side_Scroll" parent="Pause/Characters" instance=ExtResource("3_ofnu1")]
+process_mode = 1
 position = Vector2(-589, 39.9999)
 scale = Vector2(13.28, 13.28)
 
