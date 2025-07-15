@@ -111,7 +111,6 @@ scale = Vector2(17.24, 8.12)
 text = "Floor Collision"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Pause"]
 position = Vector2(-976, -896)
@@ -124,7 +123,7 @@ zoom = Vector2(0.6, 0.605)
 
 [node name="Character_Side_Scroll" parent="Pause/Characters" instance=ExtResource("3_ofnu1")]
 process_mode = 1
-position = Vector2(-599, 15)
+position = Vector2(-589, 39.9999)
 scale = Vector2(13.28, 13.28)
 
 [node name="Character_Top_Down" parent="Pause/Characters" instance=ExtResource("2_6hlny")]
@@ -143,5 +142,6 @@ frame_progress = 0.539542
 
 [node name="Collectibles" type="Node" parent="."]
 
-[node name="SoulsCounter" parent="." instance=ExtResource("8_gc4uv")]
-scale = Vector2(3, 3)
+[node name="SoulsCounter" parent="Collectibles" instance=ExtResource("8_gc4uv")]
+position = Vector2(-400, 40)
+amount = 1

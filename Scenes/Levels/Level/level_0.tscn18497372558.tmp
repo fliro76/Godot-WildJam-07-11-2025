@@ -32,4 +32,7 @@ levelToTeleport = "Scenes/Levels/Level/level_1"
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_c1mpu")]
 
-[node name="SoulsCounter" parent="PauseMenu" instance=ExtResource("4_vymeg")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SoulsCounter" parent="CanvasLayer" instance=ExtResource("4_vymeg")]
+position = Vector2(-61, -78)
