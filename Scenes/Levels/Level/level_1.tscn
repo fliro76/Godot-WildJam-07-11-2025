@@ -12,8 +12,10 @@ distance = 1.0
 position = Vector2(4, -4)
 
 [node name="Character_Top_Down" parent="Characters" instance=ExtResource("2_xfk5q")]
+
 position = Vector2(248, 189)
 scale = Vector2(5, 3.24)
+
 
 [node name="Camera" type="Node2D" parent="."]
 
