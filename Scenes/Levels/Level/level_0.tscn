@@ -1,32 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccx4ti6fa5mvu"]
+[gd_scene load_steps=5 format=4 uid="uid://ccx4ti6fa5mvu"]
 
 [ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="1_6j21y"]
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_aro42"]
 [ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="3_c1mpu"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g82nm"]
-distance = 1.0
+[ext_resource type="TileSet" uid="uid://dgdmo2tacjlrr" path="res://TileSets/SceneTest.tres" id="4_vymeg"]
 
 [node name="Level - Outside" type="Node2D"]
 process_mode = 1
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-process_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_g82nm")
-
 [node name="Character_Side_Scroll" parent="." instance=ExtResource("1_6j21y")]
 process_mode = 1
-position = Vector2(-15, -9)
+top_level = true
+position = Vector2(209, 111)
+scale = Vector2(2.84, 2.84)
 
 [node name="Camera2D" type="Camera2D" parent="Character_Side_Scroll"]
 position = Vector2(0, -2)
 zoom = Vector2(3, 3)
 
 [node name="Door" parent="." instance=ExtResource("2_aro42")]
-position = Vector2(178, -26)
+position = Vector2(244, 104)
 scale = Vector2(0.5, 0.5)
 levelToTeleport = "Scenes/Levels/Level/level_1"
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_c1mpu")]
+visible = false
+
+[node name="TileMap" type="Node2D" parent="."]
+position = Vector2(61, 129)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+position = Vector2(-70, -1)
+scale = Vector2(0.45, 0.45)
+tile_map_data = PackedByteArray("AAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAEAP//AQACAAAAAAAHAP//AQACAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAFAAAAAAD9/wAAAQAGAAAAAAA=")
+tile_set = ExtResource("4_vymeg")
