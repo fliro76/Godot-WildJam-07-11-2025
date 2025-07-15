@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://buijd2lnephv0"]
 
-[ext_resource type="Texture2D" uid="uid://dtfo6iaceodul" path="res://Assets/City Tile Set/PNG/City1/Bright/wheels&hydrant.png" id="1_hywm6"]
+[ext_resource type="Texture2D" uid="uid://dtfo6iaceodul" path="res://Assets/Template Assets/City Tile Set/PNG/City1/Bright/wheels&hydrant.png" id="1_hywm6"]
 [ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="2_6hlny"]
-[ext_resource type="Texture2D" uid="uid://bxm8m20scak3b" path="res://Assets/City Tile Set/PNG/City1/Bright/road&border.png" id="2_ldduo"]
+[ext_resource type="Texture2D" uid="uid://bxm8m20scak3b" path="res://Assets/Template Assets/City Tile Set/PNG/City1/Bright/road&border.png" id="2_ldduo"]
 [ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="3_ofnu1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqy1o"]
@@ -73,10 +73,10 @@ zoom = Vector2(0.6, 0.605)
 
 [node name="Characters" type="Node2D" parent="."]
 
-[node name="Character_Top_Down" parent="Characters" instance=ExtResource("2_6hlny")]
-position = Vector2(169, 66)
-scale = Vector2(11.8, 11.8)
-
 [node name="Character_Side_Scroll" parent="Characters" instance=ExtResource("3_ofnu1")]
 position = Vector2(-589, 39.9999)
 scale = Vector2(13.28, 13.28)
+
+[node name="Character_Top_Down" parent="." instance=ExtResource("2_6hlny")]
+position = Vector2(192, -59)
+scale = Vector2(11.3184, 5.24)

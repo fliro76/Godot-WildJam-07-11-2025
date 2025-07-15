@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcc73fmliw256"]
 
 [ext_resource type="Script" uid="uid://dhse87r2o65f" path="res://Scripts/Character_Movement_Side_Scroll.gd" id="1_u0p8r"]
-[ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_hn3hs"]
+[ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/Template Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_hn3hs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
 atlas = ExtResource("2_hn3hs")
@@ -45,6 +45,7 @@ size = Vector2(16, 16)
 [node name="Character_Side_Scroll" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+modulate = Color(0.720467, 0.720468, 0.720467, 1)
 script = ExtResource("1_u0p8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]

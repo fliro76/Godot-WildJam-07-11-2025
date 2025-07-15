@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjl7vmx40r3i8"]
+[gd_scene load_steps=11 format=3 uid="uid://bjl7vmx40r3i8"]
 
+[ext_resource type="Script" uid="uid://ceywoocxd2kms" path="res://Scripts/Interaction.gd" id="1_r3gmv"]
 [ext_resource type="Script" uid="uid://biqd8jyw27m7d" path="res://Scripts/Character_Movement_Top_Down.gd" id="1_ushfy"]
-[ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_owm7s"]
+[ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/Template Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_owm7s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
 atlas = ExtResource("2_owm7s")
@@ -40,19 +41,57 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbia7"]
-size = Vector2(16, 16)
+size = Vector2(47.0588, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3gmv"]
+radius = 5.97448
 
 [node name="Character_Top_Down" type="Node2D"]
-scale = Vector2(2.16, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_ushfy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(-1, -2)
+scale = Vector2(0.5, 1)
 sprite_frames = SubResource("SpriteFrames_a5ess")
 frame_progress = 0.707312
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1, -2)
+scale = Vector2(0.17, 1)
 shape = SubResource("RectangleShape2D_wbia7")
+
+[node name="Interaction Components" type="Node2D" parent="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_r3gmv")
+
+[node name="InteractionArea" type="Area2D" parent="CharacterBody2D/Interaction Components"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Components/InteractionArea"]
+scale = Vector2(1.33903, 2.11194)
+shape = SubResource("CircleShape2D_r3gmv")
+
+[node name="Label" type="Label" parent="CharacterBody2D/Interaction Components"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 131.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.129629, 0.166172)
+size_flags_vertical = 0
+text = "Press F to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D" method="_on_interaction_area_area_entered"]
+[connection signal="area_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D" method="_on_interaction_area_area_exited"]
+[connection signal="area_exited" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_area_exited"]
