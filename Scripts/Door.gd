@@ -1,10 +1,18 @@
-extends Area2D
-
-@export var levelToTeleport = "Scenes/Levels/Level/level_0"
+class_name Door extends Area2D
 
 
+#Propreties
+
+var myClassName = "door":
+	get:
+		return myClassName
 
 
-# To change to the interaction.
-func _on_body_entered(body: Node2D) -> void:
+@export var levelToTeleport = "Scenes/Levels/Level/level_0" #Need to set manually for each door.
+
+
+#Function
+
+#Load new scenes with the information set. To add coordinate.
+func loadNewScene() -> void:
 	get_tree().change_scene_to_file(str("res://",levelToTeleport,".tscn"))

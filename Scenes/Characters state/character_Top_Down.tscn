@@ -90,8 +90,10 @@ size_flags_vertical = 0
 text = "Press F to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D" method="_on_interaction_area_area_entered"]
 [connection signal="area_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D" method="_on_interaction_area_area_exited"]
 [connection signal="area_exited" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_area_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_body_entered"]
