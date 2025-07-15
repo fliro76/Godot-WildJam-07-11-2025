@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dreyi5v2n31ft"]
+
+[ext_resource type="Script" uid="uid://bo7ixyjdr6h06" path="res://Scripts/leavegame.gd" id="1_qqk0j"]
+[ext_resource type="Script" uid="uid://cqh0dv4yferfa" path="res://Scripts/StartGame.gd" id="1_vytfc"]
+
+[node name="Main Menu" type="CanvasLayer"]
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.323958
+anchor_top = 0.177778
+anchor_right = 0.524263
+anchor_bottom = 0.292768
+offset_left = 146.0
+offset_top = 64.0
+offset_right = -142.586
+offset_bottom = -29.189
+scale = Vector2(4.0061, 4.0061)
+text = "Start Game"
+script = ExtResource("1_vytfc")
+
+[node name="Leave" type="Button" parent="."]
+offset_left = 680.0
+offset_top = 480.0
+offset_right = 822.0
+offset_bottom = 511.0
+scale = Vector2(3.95254, 3.95254)
+text = "Leave to Desktop"
+script = ExtResource("1_qqk0j")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Leave" to="Leave" method="_on_pressed"]
