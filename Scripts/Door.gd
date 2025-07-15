@@ -7,6 +7,9 @@ var myClassName = "door":
 	get:
 		return myClassName
 
+var labelname = "open door":
+	get:
+		return labelname
 
 @export var levelToTeleport = "Scenes/Levels/Level/level_0" #Need to set manually for each door.
 
