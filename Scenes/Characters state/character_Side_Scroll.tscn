@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcc73fmliw256"]
+[gd_scene load_steps=11 format=3 uid="uid://dcc73fmliw256"]
 
 [ext_resource type="Script" uid="uid://dhse87r2o65f" path="res://Scripts/Character_Movement_Side_Scroll.gd" id="1_u0p8r"]
 [ext_resource type="Texture2D" uid="uid://k43p6yf87k5r" path="res://Assets/Template Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_hn3hs"]
+[ext_resource type="Script" uid="uid://ceywoocxd2kms" path="res://Scripts/Interaction.gd" id="3_hn3hs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
 atlas = ExtResource("2_hn3hs")
@@ -42,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbia7"]
 size = Vector2(16, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhkaq"]
+radius = 5.97448
+
 [node name="Character_Side_Scroll" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -56,3 +60,39 @@ frame_progress = 0.707312
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_wbia7")
+
+[node name="Interaction Components" type="Node2D" parent="CharacterBody2D"]
+z_index = 1
+script = ExtResource("3_hn3hs")
+
+[node name="InteractionArea" type="Area2D" parent="CharacterBody2D/Interaction Components"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Components/InteractionArea"]
+scale = Vector2(1.33903, 2.11194)
+shape = SubResource("CircleShape2D_dhkaq")
+
+[node name="Label" type="Label" parent="CharacterBody2D/Interaction Components"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 131.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.129629, 0.166172)
+size_flags_vertical = 0
+text = "Press F to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_area_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Interaction Components/InteractionArea" to="CharacterBody2D/Interaction Components" method="_on_interaction_area_body_entered"]
