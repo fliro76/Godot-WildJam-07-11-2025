@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://p151r725gvhn"]
+[gd_scene load_steps=3 format=3 uid="uid://p151r725gvhn"]
 
 [ext_resource type="PackedScene" uid="uid://ddjro7lbdw1qk" path="res://Scenes/Levels/Level/level_1.tscn" id="2_bo1nx"]
 
@@ -8,3 +8,9 @@
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-10, -14)
+
+[node name="Door" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(340, 300)
+
+[node name="Object" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(433, 165)
