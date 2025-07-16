@@ -20,7 +20,7 @@ func _on_interaction_area_area_entered(area: Area2D) -> void:
 	detection = area
 	#Shows the label =
 	labelshown(area)
-	#print("in collision")
+	#print("in collision
 
 # Leaving the Area
 func _on_interaction_area_area_exited(area: Area2D) -> void:
