@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dskgrpt7nj6h2"]
+[gd_scene load_steps=4 format=3 uid="uid://dskgrpt7nj6h2"]
 
 [ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="1_y00v0"]
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_nmbic"]
-[ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="3_i7wa2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t2wyo"]
 distance = 1.0
@@ -60,9 +59,6 @@ shape = SubResource("WorldBoundaryShape2D_t2wyo")
 position = Vector2(824, 869)
 scale = Vector2(3.01681, 3.01681)
 levelToTeleport = "Scenes/Levels/Level/Outside/level_0"
-
-[node name="PauseMenu" parent="." instance=ExtResource("3_i7wa2")]
-visible = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = 379.0

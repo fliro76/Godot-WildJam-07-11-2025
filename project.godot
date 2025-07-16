@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Godot Wildjam 07-11-2025"
-run/main_scene="uid://dreyi5v2n31ft"
+run/main_scene="uid://bm44qfbmjma5t"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
 
 [display]
 

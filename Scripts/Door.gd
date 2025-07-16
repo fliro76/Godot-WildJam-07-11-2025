@@ -18,4 +18,4 @@ var labelname = "open door":
 
 #Load new scenes with the information set. To add coordinate.
 func loadNewScene() -> void:
-	get_tree().change_scene_to_file(str("res://",levelToTeleport,".tscn"))
+	Global.game_controller.change_world2D_scene(str("res://",levelToTeleport,".tscn")) 
