@@ -8,7 +8,7 @@ process_mode = 3
 script = ExtResource("1_ds18y")
 
 [node name="pause" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 790.0
@@ -24,7 +24,7 @@ mouse_default_cursor_shape = 2
 text = "Resume"
 
 [node name="Leave" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 745.0
