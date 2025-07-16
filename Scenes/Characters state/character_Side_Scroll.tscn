@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhse87r2o65f" path="res://Scripts/Character_Movement_Side_Scroll.gd" id="1_u0p8r"]
 [ext_resource type="Texture2D" uid="uid://b21jsagq1mf0c" path="res://Assets/Assets_Final/IdleSideScroll.png" id="2_hn3hs"]
 [ext_resource type="Texture2D" uid="uid://cqlo5rbxs0ayw" path="res://Assets/Assets_Final/Jump.png" id="3_5dv3s"]
-[ext_resource type="Texture2D" uid="uid://b508soylpl6j2" path="res://Assets/Assets_Final/Running_animation.png" id="3_dhkaq"]
+[ext_resource type="Texture2D" uid="uid://b508soylpl6j2" path="res://Assets/Assets_Final/Running_Animation.png" id="3_dhkaq"]
 [ext_resource type="Script" uid="uid://ceywoocxd2kms" path="res://Scripts/Interaction.gd" id="3_hn3hs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhkaq"]
