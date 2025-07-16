@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://buijd2lnephv0"]
+[gd_scene load_steps=21 format=3 uid="uid://buijd2lnephv0"]
 
 [ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="1_hn2v1"]
 [ext_resource type="Texture2D" uid="uid://dtfo6iaceodul" path="res://Assets/Template Assets/City Tile Set/PNG/City1/Bright/wheels&hydrant.png" id="1_hywm6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="3_ofnu1"]
 [ext_resource type="PackedScene" uid="uid://duifersubfxhf" path="res://Scenes/Miscelanious/Interact Area/interact_area.tscn" id="4_ldduo"]
 [ext_resource type="Texture2D" uid="uid://cybyba15amqkn" path="res://Assets/Player_Character/Idle.png" id="7_hn2v1"]
+[ext_resource type="Texture2D" uid="uid://dxegijjm605lh" path="res://Assets/Assets_Final/Topdowntile.png" id="8_gc4uv"]
 
 [sub_resource type="GDScript" id="GDScript_r0hev"]
 
@@ -56,6 +57,24 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pn0eq"]
+texture = ExtResource("8_gc4uv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_twey1"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pn0eq")
 
 [node name="Test_Env" type="Node2D"]
 
@@ -138,3 +157,7 @@ scale = Vector2(4.75401, 4.72)
 sprite_frames = SubResource("SpriteFrames_pfrs8")
 autoplay = "default"
 frame_progress = 0.539542
+
+[node name="Topdown" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_twey1")
+format = 2

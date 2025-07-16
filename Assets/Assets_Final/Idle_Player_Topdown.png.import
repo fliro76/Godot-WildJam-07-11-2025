@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1xjea0vhufh2"
-valid=false
+uid="uid://b8pgjyid2n1d7"
+path="res://.godot/imported/Idle_Player_Topdown.png-85a2b9c34b9334282bbc2507137580cd.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Deprecated/tilemap_outside_ruin.png"
+source_file="res://Assets/Assets_Final/Idle_Player_Topdown.png"
+dest_files=["res://.godot/imported/Idle_Player_Topdown.png-85a2b9c34b9334282bbc2507137580cd.ctex"]
 
 [params]
 
