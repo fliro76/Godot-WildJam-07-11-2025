@@ -105,8 +105,9 @@ animations = [{
 radius = 4.0
 height = 16.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhkaq"]
-radius = 5.97448
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5dv3s"]
+radius = 3.73405
+height = 9.46997
 
 [node name="Character_Side_Scroll" type="Node2D"]
 
@@ -135,9 +136,9 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Components/InteractionArea"]
-position = Vector2(0, -6)
+position = Vector2(0, -3)
 scale = Vector2(1.33903, 2.11194)
-shape = SubResource("CircleShape2D_dhkaq")
+shape = SubResource("CapsuleShape2D_5dv3s")
 
 [node name="Label" type="Label" parent="CharacterBody2D/Interaction Components"]
 anchors_preset = 8

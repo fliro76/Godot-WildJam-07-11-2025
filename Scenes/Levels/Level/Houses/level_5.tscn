@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddjro7lbdw1qk"]
+[gd_scene load_steps=5 format=3 uid="uid://ddjkqewljt1gq"]
 
-[ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="1_l6vcx"]
-[ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_6k3ib"]
-[ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="2_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="1_e6cb1"]
+[ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_srtf0"]
+[ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="3_c81rn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t2wyo"]
 distance = 1.0
 
-[node name="Level1" type="Node2D"]
+[node name="Level5" type="Node2D"]
 process_mode = 1
 
 [node name="Characters" type="Node2D" parent="."]
 position = Vector2(4, -4)
 
-[node name="Character_Top_Down" parent="Characters" instance=ExtResource("2_xfk5q")]
+[node name="Character_Top_Down" parent="Characters" instance=ExtResource("1_e6cb1")]
 position = Vector2(622, 919)
 scale = Vector2(14.6, 9.4608)
 
@@ -56,9 +56,19 @@ rotation = 4.71239
 position = Vector2(-1080, 1825)
 shape = SubResource("WorldBoundaryShape2D_t2wyo")
 
-[node name="Door" parent="." instance=ExtResource("2_6k3ib")]
+[node name="Door" parent="." instance=ExtResource("2_srtf0")]
 position = Vector2(824, 869)
 scale = Vector2(3.01681, 3.01681)
+levelToTeleport = "Scenes/Levels/Level/Outside/level_0"
 
-[node name="PauseMenu" parent="." instance=ExtResource("1_l6vcx")]
+[node name="PauseMenu" parent="." instance=ExtResource("3_c81rn")]
 visible = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 379.0
+offset_top = 150.0
+offset_right = 502.0
+offset_bottom = 199.0
+scale = Vector2(6.56, 6.56)
+text = "House 5
+Temporary Text"
