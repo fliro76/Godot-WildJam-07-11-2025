@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhse87r2o65f" path="res://Scripts/Character_Movement_Side_Scroll.gd" id="1_u0p8r"]
 [ext_resource type="Texture2D" uid="uid://b21jsagq1mf0c" path="res://Assets/Assets_Final/IdleSideScroll.png" id="2_hn3hs"]
 [ext_resource type="Texture2D" uid="uid://cqlo5rbxs0ayw" path="res://Assets/Assets_Final/Jump.png" id="3_5dv3s"]
-[ext_resource type="Texture2D" uid="uid://b508soylpl6j2" path="res://Assets/Assets_Final/Running_animation.png" id="3_dhkaq"]
+[ext_resource type="Texture2D" uid="uid://b508soylpl6j2" path="res://Assets/Assets_Final/Running_Animation.png" id="3_dhkaq"]
 [ext_resource type="Script" uid="uid://ceywoocxd2kms" path="res://Scripts/Interaction.gd" id="3_hn3hs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhkaq"]
@@ -105,8 +105,9 @@ animations = [{
 radius = 4.0
 height = 16.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhkaq"]
-radius = 5.97448
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5dv3s"]
+radius = 3.73405
+height = 9.46997
 
 [node name="Character_Side_Scroll" type="Node2D"]
 
@@ -135,9 +136,9 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Components/InteractionArea"]
-position = Vector2(0, -6)
+position = Vector2(0, -3)
 scale = Vector2(1.33903, 2.11194)
-shape = SubResource("CircleShape2D_dhkaq")
+shape = SubResource("CapsuleShape2D_5dv3s")
 
 [node name="Label" type="Label" parent="CharacterBody2D/Interaction Components"]
 anchors_preset = 8
