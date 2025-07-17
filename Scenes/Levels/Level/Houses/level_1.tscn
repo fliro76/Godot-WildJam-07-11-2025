@@ -24,9 +24,10 @@ scale = Vector2(2.76, 1.79622)
 [node name="Camera" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2(-4, 3)
+position = Vector2(458, 708)
 scale = Vector2(582.944, -6647.96)
 anchor_mode = 0
+zoom = Vector2(3, 3)
 
 [node name="Walls Collision" type="Node2D" parent="."]
 
