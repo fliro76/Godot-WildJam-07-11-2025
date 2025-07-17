@@ -1,21 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://ccx4ti6fa5mvu"]
+[gd_scene load_steps=3 format=4 uid="uid://ccx4ti6fa5mvu"]
 
-[ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="1_3py6k"]
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_ua8cs"]
 [ext_resource type="TileSet" uid="uid://dgdmo2tacjlrr" path="res://TileSets/SceneTest.tres" id="4_8bc62"]
 
 [node name="Level - Outside" type="Node2D"]
 process_mode = 1
-
-[node name="Character_Side_Scroll" parent="." instance=ExtResource("1_3py6k")]
-process_mode = 1
-top_level = true
-position = Vector2(209, 111)
-scale = Vector2(2.84, 2.84)
-
-[node name="Camera2D" type="Camera2D" parent="Character_Side_Scroll"]
-position = Vector2(0, -2)
-zoom = Vector2(3, 3)
 
 [node name="Door" parent="." instance=ExtResource("2_ua8cs")]
 position = Vector2(86, 103)
@@ -43,9 +32,11 @@ scale = Vector2(0.5, 0.5)
 levelToTeleport = "Scenes/Levels/Level/Houses/level_5"
 
 [node name="Door6" parent="." instance=ExtResource("2_ua8cs")]
-position = Vector2(-77, 102)
+position = Vector2(-77, 104)
 scale = Vector2(0.5, 0.5)
 levelToTeleport = "Scenes/Levels/Level/Others/level_6"
+coordinate = Vector2(-66, 105)
+changeControle = false
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(61, 129)
@@ -55,3 +46,7 @@ position = Vector2(-70, -1)
 scale = Vector2(0.45, 0.45)
 tile_map_data = PackedByteArray("AAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAEAP//AQACAAAAAAAHAP//AQACAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAFAAAAAAD9/wAAAQAGAAAAAAA=")
 tile_set = ExtResource("4_8bc62")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(220, 100)
+zoom = Vector2(2, 2)

@@ -113,6 +113,7 @@ height = 9.46997
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
+scale = Vector2(3, 3)
 script = ExtResource("1_u0p8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
