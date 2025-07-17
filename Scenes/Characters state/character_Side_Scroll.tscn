@@ -132,8 +132,9 @@ z_index = 1
 script = ExtResource("3_hn3hs")
 
 [node name="InteractionArea" type="Area2D" parent="CharacterBody2D/Interaction Components"]
+scale = Vector2(1.01218, 1)
 collision_layer = 0
-collision_mask = 516
+collision_mask = 532
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interaction Components/InteractionArea"]

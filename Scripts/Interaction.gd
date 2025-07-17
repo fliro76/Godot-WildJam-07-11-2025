@@ -2,7 +2,12 @@ extends Node2D
 #variable to set up mylabel in func ready
 var mylabel 
 var nearInteractible = false
+var nearDialogue = false
 var detection
+
+@onready var interaction_area: Area2D = $InteractionArea
+
+
 func _ready () -> void:
 	#sets mylabel to modify the text of label in further functions
 	mylabel = $Label
@@ -12,6 +17,8 @@ func _ready () -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("Interact") and nearInteractible:
 		interaction(detection)
+	if Input.is_action_just_pressed("ui_accept"):
+		dialogue()
 
 
 # On entered area, add the detection. Will cause an issue if 2 area to close.
@@ -19,7 +26,7 @@ func _on_interaction_area_area_entered(area: Area2D) -> void:
 	nearInteractible = true
 	detection = area
 	#Shows the label =
-	labelshown(area)
+	#labelshown(area)
 	#print("in collision
 
 # Leaving the Area
@@ -45,3 +52,10 @@ func labelshown(area: Area2D) -> void:
 func labelhidden() -> void:
 	get_node("Label")
 	hide()
+	
+func dialogue() -> void :
+	var actionables = interaction_area.get_overlapping_areas()
+	if actionables.size() > 0 : 
+		actionables[0].action()
+		return
+	

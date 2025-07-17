@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://do7hh516spsjy"]
+[gd_scene load_steps=6 format=3 uid="uid://do7hh516spsjy"]
 
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="1_p5nfr"]
+[ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="2_7xffj"]
+[ext_resource type="PackedScene" uid="uid://dowfbcmvkdqvt" path="res://UI/TextDisplay/Actionable.tscn" id="2_t6auf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2lrwd"]
 distance = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imxwq"]
+radius = 31.9227
 
 [node name="Level1" type="Node2D"]
 
@@ -51,11 +56,25 @@ position = Vector2(824, 869)
 scale = Vector2(3.01681, 3.01681)
 levelToTeleport = "Scenes/Levels/Level/Outside/level_0"
 
+[node name="Actionable" parent="Door" instance=ExtResource("2_t6auf")]
+position = Vector2(-0.331476, 0)
+scale = Vector2(1, 0.914295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Actionable"]
+position = Vector2(38.1197, 20.6652)
+scale = Vector2(-2.69048, 0.556206)
+shape = SubResource("CircleShape2D_imxwq")
+debug_color = Color(0.984314, 0, 0.352941, 0.117647)
+
 [node name="Label" type="Label" parent="."]
 offset_left = 379.0
-offset_top = 150.0
+offset_top = 149.0
 offset_right = 502.0
-offset_bottom = 199.0
+offset_bottom = 198.0
 scale = Vector2(6.56, 6.56)
 text = "House 1
 Temporary Text"
+
+[node name="Character_Side_Scroll" parent="." instance=ExtResource("2_7xffj")]
+position = Vector2(621, 957)
+scale = Vector2(3.4, 3.4)

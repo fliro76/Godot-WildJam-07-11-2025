@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://buwr5nqt0n75c"]
+
+[ext_resource type="Script" uid="uid://bkm4ijp05wtgj" path="res://UI/TextDisplay/dialogue_test.gd" id="1_580m7"]
+
+[node name="DialogueTest" type="Node2D"]
+scale = Vector2(1.0068, 1.05339)
+script = ExtResource("1_580m7")
