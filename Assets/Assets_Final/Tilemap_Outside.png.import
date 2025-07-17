@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr8rciiw2kjbg"
-path="res://.godot/imported/doorPlaceholder.webp-08e548aaa8bf4d2925b5a06c67689738.ctex"
+uid="uid://cmtu72qrm0pk2"
+path="res://.godot/imported/Tilemap_Outside.png-2efc95525968612237f3ff6445cb1f08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/doorPlaceholder.webp"
-dest_files=["res://.godot/imported/doorPlaceholder.webp-08e548aaa8bf4d2925b5a06c67689738.ctex"]
+source_file="res://Assets/Assets_Final/Tilemap_Outside.png"
+dest_files=["res://.godot/imported/Tilemap_Outside.png-2efc95525968612237f3ff6445cb1f08.ctex"]
 
 [params]
 

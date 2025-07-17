@@ -3,7 +3,6 @@ extends Node2D
 var mylabel 
 var nearInteractible = false
 var detection
-
 func _ready () -> void:
 	#sets mylabel to modify the text of label in further functions
 	mylabel = $Label
@@ -20,8 +19,8 @@ func _on_interaction_area_area_entered(area: Area2D) -> void:
 	nearInteractible = true
 	detection = area
 	#Shows the label =
-	#labelshown(area)
-	#print("in collision")
+	labelshown(area)
+	#print("in collision
 
 # Leaving the Area
 func _on_interaction_area_area_exited(area: Area2D) -> void:
@@ -46,5 +45,3 @@ func labelshown(area: Area2D) -> void:
 func labelhidden() -> void:
 	get_node("Label")
 	hide()
-	
-	

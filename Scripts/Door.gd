@@ -1,10 +1,7 @@
 class_name Door extends Area2D
 
+
 #Propreties
-@onready var soulsCounterNode = get_node("SoulsCounter")
-
-
-var soulsCount = 0
 
 var myClassName = "door":
 	get:
@@ -15,16 +12,12 @@ var labelname = "open door":
 		return labelname
 
 @export var levelToTeleport = "Scenes/Levels/Level/level_0" #Need to set manually for each door.
-
-
-
+@export var coordinate: Vector2 = Vector2(0,0)
+@export var changeControle: bool = true
 
 #Function
 
-
 #Load new scenes with the information set. To add coordinate.
 func loadNewScene() -> void:
-	#add count on door triggered
-	soulsCounterNode.set_soulsCounter(soulsCount)
-	
-	get_tree().change_scene_to_file(str("res://",levelToTeleport,".tscn"))
+	Global.game_controller.change_world2D_scene(str("res://",levelToTeleport,".tscn")) 
+	Global.game_controller.placing_player(coordinate, changeControle)
