@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bry0ks446i4ss"]
+[gd_scene load_steps=3 format=3 uid="uid://bry0ks446i4ss"]
 
-[ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="1_g16ti"]
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_fusok"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t2wyo"]
@@ -8,13 +7,6 @@ distance = 1.0
 
 [node name="Level1" type="Node2D"]
 process_mode = 1
-
-[node name="Characters" type="Node2D" parent="."]
-position = Vector2(4, -4)
-
-[node name="Character_Top_Down" parent="Characters" instance=ExtResource("1_g16ti")]
-position = Vector2(622, 919)
-scale = Vector2(14.6, 9.4608)
 
 [node name="Camera" type="Node2D" parent="."]
 
