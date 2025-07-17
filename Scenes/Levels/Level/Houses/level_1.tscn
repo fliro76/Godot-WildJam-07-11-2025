@@ -64,16 +64,6 @@ position = Vector2(846, 126)
 scale = Vector2(3.01681, 1.85431)
 levelToTeleport = "Scenes/Levels/Level/Outside/level_0"
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 602.0
-offset_top = 116.0
-offset_right = 725.0
-offset_bottom = 165.0
-scale = Vector2(6.56, 6.56)
-text = "House 1
-Temporary Text"
-
 [node name="TileMap" type="Node" parent="."]
 
 [node name="BackGround (3)" type="TileMapLayer" parent="TileMap"]
