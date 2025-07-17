@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=4 format=3 uid="uid://dx21oecxminjy"]
 
-[ext_resource type="Texture2D" uid="uid://fdt3okw5t6ef" path="res://Assets/Assets_Final/Tilemap_Interior.png" id="1_atlsm"]
+[ext_resource type="Texture2D" path="res://Assets/Assets_Final/Tilemap_Interior.png" id="1_atlsm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_atlsm"]
 
