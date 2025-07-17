@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddjro7lbdw1qk"]
+[gd_scene load_steps=3 format=3 uid="uid://do7hh516spsjy"]
 
-[ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_t6auf"]
+[ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="1_p5nfr"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t2wyo"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2lrwd"]
 distance = 1.0
 
 [node name="Level1" type="Node2D"]
-process_mode = 1
 
 [node name="Camera" type="Node2D" parent="."]
 
@@ -22,7 +21,7 @@ anchor_mode = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Top"]
 position = Vector2(39, 3)
 rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_t2wyo")
+shape = SubResource("WorldBoundaryShape2D_2lrwd")
 
 [node name="Left" type="StaticBody2D" parent="Walls Collision"]
 rotation = 4.71239
@@ -30,14 +29,14 @@ rotation = 4.71239
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Left"]
 position = Vector2(-46, -4)
 rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_t2wyo")
+shape = SubResource("WorldBoundaryShape2D_2lrwd")
 
 [node name="Bottom" type="StaticBody2D" parent="Walls Collision"]
 position = Vector2(-34, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Bottom"]
 position = Vector2(1907, 1082)
-shape = SubResource("WorldBoundaryShape2D_t2wyo")
+shape = SubResource("WorldBoundaryShape2D_2lrwd")
 
 [node name="Right" type="StaticBody2D" parent="Walls Collision"]
 position = Vector2(91, -40)
@@ -45,9 +44,9 @@ rotation = 4.71239
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls Collision/Right"]
 position = Vector2(-1080, 1825)
-shape = SubResource("WorldBoundaryShape2D_t2wyo")
+shape = SubResource("WorldBoundaryShape2D_2lrwd")
 
-[node name="Door" parent="." instance=ExtResource("2_t6auf")]
+[node name="Door" parent="." instance=ExtResource("1_p5nfr")]
 position = Vector2(824, 869)
 scale = Vector2(3.01681, 3.01681)
 levelToTeleport = "Scenes/Levels/Level/Outside/level_0"
