@@ -1,6 +1,7 @@
+
 [gd_scene load_steps=5 format=4 uid="uid://bw7pmn1d87oo4"]
 
-[ext_resource type="PackedScene" uid="uid://bjl7vmx40r3i8" path="res://Scenes/Characters state/character_Top_Down.tscn" id="1_8jjho"]
+
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_q63rd"]
 [ext_resource type="TileSet" uid="uid://dx21oecxminjy" path="res://TileSets/Inside.tres" id="3_28yyr"]
 
@@ -9,6 +10,7 @@ distance = 1.0
 
 [node name="Level4" type="Node2D"]
 process_mode = 1
+
 
 [node name="Characters" type="Node2D" parent="."]
 z_index = 10
