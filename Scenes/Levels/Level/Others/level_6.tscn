@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=4 uid="uid://dyhdmdre04uya"]
+[gd_scene load_steps=4 format=4 uid="uid://dyhdmdre04uya"]
 
-[ext_resource type="PackedScene" uid="uid://dcc73fmliw256" path="res://Scenes/Characters state/character_Side_Scroll.tscn" id="1_ly6j4"]
 [ext_resource type="PackedScene" uid="uid://dbuotqvc8dqey" path="res://Scenes/Miscelanious/door.tscn" id="2_xm4ij"]
 [ext_resource type="PackedScene" uid="uid://d0d5k3wgyeje5" path="res://Scenes/Miscelanious/UI/pause_manager.tscn" id="3_4nanq"]
 [ext_resource type="TileSet" uid="uid://dgdmo2tacjlrr" path="res://TileSets/SceneTest.tres" id="4_o2ml8"]
@@ -8,20 +7,12 @@
 [node name="Level - Demon Lair" type="Node2D"]
 process_mode = 1
 
-[node name="Character_Side_Scroll" parent="." instance=ExtResource("1_ly6j4")]
-process_mode = 1
-top_level = true
-position = Vector2(209, 111)
-scale = Vector2(2.84, 2.84)
-
-[node name="Camera2D" type="Camera2D" parent="Character_Side_Scroll"]
-position = Vector2(0, -2)
-zoom = Vector2(3, 3)
-
 [node name="Door" parent="." instance=ExtResource("2_xm4ij")]
-position = Vector2(-66, 102)
+position = Vector2(-66, 105)
 scale = Vector2(0.5, 0.5)
 levelToTeleport = "Scenes/Levels/Level/Outside/level_0"
+coordinate = Vector2(-77, 104)
+changeControle = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_4nanq")]
 visible = false
@@ -34,3 +25,8 @@ position = Vector2(-70, -1)
 scale = Vector2(0.45, 0.45)
 tile_map_data = PackedByteArray("AAD+/wAAAQAHAAAAAAD//wAAAQAHAAAAAAAAAAAAAQAHAAAAAAABAAAAAQAHAAAAAAACAAAAAQAHAAAAAAADAAAAAQAHAAAAAAAEAAAAAQAHAAAAAAAFAAAAAQAHAAAAAAAGAAAAAQAHAAAAAAAHAAAAAQAHAAAAAAAEAP//AQACAAAAAAAHAP//AQACAAAAAAAIAAAAAQAHAAAAAAAJAAAAAQAHAAAAAAAKAAAAAQAHAAAAAAALAAAAAQAHAAAAAAAMAAAAAQAHAAAAAAANAAAAAQAHAAAAAAAOAAAAAQAHAAAAAAAPAAAAAQAHAAAAAAD9/wAAAQAHAAAAAAAQAAAAAQAHAAAAAAARAAAAAQAHAAAAAAASAAAAAQAHAAAAAAASAAEAAQAHAAAAAAARAAEAAQAHAAAAAAAQAAEAAQAHAAAAAAAPAAEAAQAHAAAAAAAOAAEAAQAHAAAAAAANAAEAAQAHAAAAAAAMAAEAAQAHAAAAAAALAAEAAQAHAAAAAAAKAAEAAQAHAAAAAAAJAAEAAQAHAAAAAAAIAAEAAQAHAAAAAAAHAAEAAQAHAAAAAAAGAAEAAQAHAAAAAAAFAAEAAQAHAAAAAAAEAAEAAQAHAAAAAAADAAEAAQAHAAAAAAACAAEAAQAHAAAAAAABAAEAAQAHAAAAAAAAAAEAAQAHAAAAAAD//wEAAQAHAAAAAAD+/wEAAQAHAAAAAAD9/wEAAQAHAAAAAAD8/wEAAQAHAAAAAAD8/wAAAQAHAAAAAAD8/wIAAQAHAAAAAAD9/wIAAQAHAAAAAAD+/wIAAQAHAAAAAAD//wIAAQAHAAAAAAAAAAIAAQAHAAAAAAABAAIAAQAHAAAAAAACAAIAAQAHAAAAAAADAAIAAQAHAAAAAAAEAAIAAQAHAAAAAAAFAAIAAQAHAAAAAAAGAAIAAQAHAAAAAAAHAAIAAQAHAAAAAAAIAAIAAQAHAAAAAAAJAAIAAQAHAAAAAAAKAAIAAQAHAAAAAAALAAIAAQAHAAAAAAAMAAIAAQAHAAAAAAANAAIAAQAHAAAAAAAOAAIAAQAHAAAAAAAPAAIAAQAHAAAAAAAQAAIAAQAHAAAAAAARAAIAAQAHAAAAAAASAAIAAQAHAAAAAAASAP//AQAHAAAAAAASAP7/AQAHAAAAAAASAP3/AQAHAAAAAAASAPz/AQAHAAAAAAASAPv/AQAHAAAAAAD8////AQAHAAAAAAD8//7/AQAHAAAAAAD8//3/AQAHAAAAAAD8//z/AQAHAAAAAAD8//v/AQAHAAAAAAA=")
 tile_set = ExtResource("4_o2ml8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(209, 105.32)
+scale = Vector2(2.84, 2.84)
+zoom = Vector2(3, 3)

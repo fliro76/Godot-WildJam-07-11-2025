@@ -113,6 +113,7 @@ size = Vector2(47.0588, 16)
 radius = 5.97448
 
 [node name="Character_Top_Down" type="Node2D"]
+scale = Vector2(10, 10)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_ushfy")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm44qfbmjma5t"]
+
+[ext_resource type="Script" uid="uid://bb76udrfkvsj0" path="res://Scripts/game_controller.gd" id="1_nqxm2"]
+
+[node name="GameController" type="Node" node_paths=PackedStringArray("world2D", "gameUI", "Character")]
+script = ExtResource("1_nqxm2")
+world2D = NodePath("world2D")
+gameUI = NodePath("gameUI")
+Character = NodePath("Character")
+
+[node name="world2D" type="Node2D" parent="."]
+
+[node name="gameUI" type="CanvasLayer" parent="."]
+
+[node name="Character" type="Node2D" parent="."]
