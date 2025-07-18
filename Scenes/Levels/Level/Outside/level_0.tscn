@@ -10,6 +10,7 @@ process_mode = 1
 position = Vector2(86, 103)
 scale = Vector2(0.5, 0.5)
 levelToTeleport = "Scenes/Levels/Level/Houses/level_1"
+coordinate = Vector2(325, 825)
 
 [node name="Door2" parent="." instance=ExtResource("2_ua8cs")]
 position = Vector2(164, 104)
