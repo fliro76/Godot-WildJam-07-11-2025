@@ -6,6 +6,7 @@ var nearDialogue = false
 var detection
 
 @onready var interaction_area: Area2D = $InteractionArea
+@onready var actionable: Area2D = $Door/Actionable
 
 
 func _ready () -> void:
@@ -17,7 +18,7 @@ func _ready () -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("Interact") and nearInteractible:
 		interaction(detection)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("Dialogue"):
 		dialogue()
 
 
@@ -42,6 +43,7 @@ func interaction(area: Area2D) -> void:
 	match area.myClassName:
 		"door":
 			area.loadNewScene()
+	
 #Shows the text label and connect to the area
 func labelshown(area: Area2D) -> void:
 	get_node("Label")
@@ -49,10 +51,12 @@ func labelshown(area: Area2D) -> void:
 	mylabel.text = area.labelname
 	show()
 #Hides the text label
-func labelhidden() -> void:
+func labelhidden() -> void:  
 	get_node("Label")
 	hide()
 	
+
+
 func dialogue() -> void :
 	var actionables = interaction_area.get_overlapping_areas()
 	if actionables.size() > 0 : 

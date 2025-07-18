@@ -1,7 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://buwr5nqt0n75c"]
+[gd_scene load_steps=8 format=3 uid="uid://buwr5nqt0n75c"]
 
-[ext_resource type="Script" uid="uid://bkm4ijp05wtgj" path="res://UI/TextDisplay/dialogue_test.gd" id="1_580m7"]
+[ext_resource type="PackedScene" uid="uid://kvg5lr2nppor" path="res://UI/Timer/Timer.tscn" id="1_8nmkp"]
+[ext_resource type="PackedScene" uid="uid://do7hh516spsjy" path="res://Scenes/Levels/Level/Houses/level_1.tscn" id="2_35m4l"]
+[ext_resource type="Texture2D" uid="uid://cvvh5g2m34hrf" path="res://Assets/Assets_Final/Door.png" id="3_8nmkp"]
+[ext_resource type="PackedScene" uid="uid://dowfbcmvkdqvt" path="res://UI/TextDisplay/Actionable.tscn" id="4_aj67t"]
+[ext_resource type="PackedScene" uid="uid://4l61ksre5yxr" path="res://UI/SoulsCounter/souls_counter.tscn" id="5_aj67t"]
+[ext_resource type="PackedScene" uid="uid://dh6lswldwbu7k" path="res://UI/UIManager.tscn" id="6_7sdqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj67t"]
+size = Vector2(248.312, 265.809)
 
 [node name="DialogueTest" type="Node2D"]
 scale = Vector2(1.0068, 1.05339)
-script = ExtResource("1_580m7")
+
+[node name="Timer" parent="." groups=["Timer"] instance=ExtResource("1_8nmkp")]
+
+[node name="SoulsCounter" parent="." instance=ExtResource("5_aj67t")]
+scale = Vector2(1, 1)
+
+[node name="Level1" parent="." instance=ExtResource("2_35m4l")]
+position = Vector2(3.97298, 1.89863)
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(1348.83, 824.956)
+texture = ExtResource("3_8nmkp")
+
+[node name="Actionable" parent="Door" instance=ExtResource("4_aj67t")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Actionable"]
+position = Vector2(-8.93921, 9.49316)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_aj67t")
+
+[node name="UiManager" parent="." instance=ExtResource("6_7sdqy")]
+offset_left = 899.881
+offset_top = 1.89863
+offset_right = 899.881
+offset_bottom = 1.89863
